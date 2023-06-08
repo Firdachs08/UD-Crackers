@@ -143,9 +143,14 @@ Coded by www.creative-tim.com
                 <form action="{{route('simpan-karyawan')}}" method="POST">
                   {{ csrf_field() }}
                     <input type="hidden">
-                    <h3>Nama Karyawan <input type="text" name="nama_karyawan" required></h3>
-                    <h3>Alamat Karyawan <input type="text" name="alamat_karyawan" required></h3>
-                    <h3>Nomor Handphone Karyawan <input type="text" name="NoHP_karyawan" required></h3>
+                    <h3>Nama <input type="text" name="name" required></h3>
+                    <h3>Email<input type="text" name="email" required></h3>
+                    <h3>Password<input type="text" name="password" required></h3>
+                    <h3>Alamat <input type="text" name="alamat" required></h3>
+                    <h3>Nomor Handphone <input type="text" name="no_hp" required></h3>
+                    
+                    
+                   
                     <button class="btn btn-animasi btn-color" type="submit" name="submit">Tambah Karyawan  <i class="uil uil-user-plus"></i></button>
                 </form>
             </div>

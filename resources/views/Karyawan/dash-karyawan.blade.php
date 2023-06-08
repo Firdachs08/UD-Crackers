@@ -60,7 +60,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="pesanan.html">
+            <a href="{{ route('dash-pesanan') }}">
               <i class="nc-icon nc-bag-16"></i>
               <p>Pesanan</p>
             </a>
@@ -139,21 +139,47 @@ Coded by www.creative-tim.com
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                            ID Karyawan
+                            ID
                         </th>
                         <th>
                             Nama 
                         </th>
                         <th>
-                            Alamat
+                            Email
                         </th>
                         <th>
-                            No Handphone
+                            Password
                         </th>
                         <th>
-                            Rubah
+                          Alamat
                         </th>
-                       
+                        <th>
+                          Nomor Handphone
+                        </th>       
+                        <th>
+                            Action
+                        </th>
+                        @foreach ($datakar as $item)
+                        <tr>
+                          <td>{{ $item->id }}</td>
+                          <td>{{ $item->name }}</td>
+                          <td>{{ $item->email }}</td>
+                          <td>{{ $item->password }}</td>
+                          <td>{{ $item->alamat }}</td>
+                          <td>{{ $item->no_hp }}</td>
+                          <td>{{ $item->email_verified_at}}</td>
+                          
+                          <td>
+                          <a class="btn btn-primary btn-round" href="{{route('edit-karyawan')}}">Update</a>
+                          <form action="{{ route('hapus-karyawan', $item->id) }}" method="POST">
+                          {{ csrf_field() }}
+                          
+                          <button type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
+                          </form>
+                                           
+                         
+                        </tr>
+                        @endforeach
                       </thead>          
                     </table>
                   </div>

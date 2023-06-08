@@ -60,7 +60,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="pesanan.html">
+            <a href="{{route('dash-stok')}}">
               <i class="nc-icon nc-bag-16"></i>
               <p>Pesanan</p>
             </a>
@@ -141,9 +141,7 @@ Coded by www.creative-tim.com
                         <th>
                             ID Produk
                         </th>
-                        <th>
-                            ID Karyawan
-                        </th>
+                        
                         <th>
                             Nama Produk
                         </th>
@@ -151,23 +149,37 @@ Coded by www.creative-tim.com
                             Harga Produk
                         </th>
                         <th>
+                          Jumlah Produk
+                        </th>
+                        <th>
                           Dibuat Tanggal
                         </th>
                         <th>
                           Diupdate Tanggal
+
                         </th>
                         <th>
-                            Action
+                           Action
                         </th>
                         @foreach ($datastok as $item)
                         <tr>
-                          <td>{{ $item->id_produk }}</td>
-                          <td>{{ $item->id_karyawan }}</td>
+                          <td>{{ $item->id }}</td>
+                          
                           <td>{{ $item->nama_produk }}</td>
                           <td>{{ $item->harga_produk }}</td>
+                          <td>{{ $item->jumlah_produk }}</td>
+                          <td>{{ ($item->created_at)->format('Y-m-d H:i:s') }}</td>
+                          <td>{{ ($item->updated_at)->format('Y-m-d H:i:s') }}</td>
                           <td>
-                              <a class="btn btn-primary btn-round" href="{{ url('Karyawan/'.$item->id_karyawan.'/edit') }}"><i class="nc-icon nc-settings-gear-65"></i></a>
-                              <a class="btn btn-primary btn-round" href="#"><i class="nc-icon nc-box"></i></a>
+                            
+                              <a class="btn btn-primary btn-round" href="{{route('add-stok')}}"><i class="nc-icon nc-settings-gear-65"></i></a>
+                              <form action="{{ route('hapus-stok', $item->id) }}" method="POST">
+                          {{ csrf_field() }}
+                          
+                          <button type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
+                          </form>
+                              
+                            
                             </td>
                         </tr>
                         @endforeach

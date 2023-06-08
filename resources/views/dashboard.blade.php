@@ -60,19 +60,19 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="pesanan.html">
+            <a href="{{route('dash-pesanan')}}">
               <i class="nc-icon nc-bag-16"></i>
               <p>Pesanan</p>
             </a>
           </li>
           <li>
-            <a href="stok.html">
+            <a href="{{ route('dash-stok') }}">
               <i class="nc-icon nc-box-2"></i>
               <p>Stok Produk</p>
             </a>
           </li>
           <li>
-            <a href="Karyawan.html">
+            <a href="{{route('dash-karyawan')}}">
               <i class="nc-icon nc-single-02"></i>
               <p>Karyawan</p>
             </a>
