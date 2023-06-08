@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KaryawanController;
+//use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\StokController;
 
 /*
@@ -39,9 +40,9 @@ Route::post('/save-stok', [App\Http\Controllers\StokController::class, 'store'])
 
 //route karyawan
 Route::get('/dash-karyawan', [App\Http\Controllers\KaryawanController::class, 'index'])->name('dash-karyawan');
-Route::get('/add-karyawan', [App\Http\Controllers\KaryawanController::class, 'create'])->name('add-karyawan');
-Route::post('/simpan-karyawan', [App\Http\Controllers\KaryawanController::class, 'store'])->name('simpan-karyawan');
-Route::get('/edit-karyawan', [App\Http\Controllers\KaryawanController::class, 'edit'])->name('edit-karyawan');
+//Route::get('/add-karyawan', [App\Http\Controllers\KaryawanController::class, 'create'])->name('add-karyawan');
+//Route::post('/simpan-karyawan', [App\Http\Controllers\KaryawanController::class, 'store'])->name('simpan-karyawan');
+//Route::get('/edit-karyawan', [App\Http\Controllers\KaryawanController::class, 'edit'])->name('edit-karyawan');
 
 
 

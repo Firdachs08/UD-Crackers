@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\stok;
 use Illuminate\Http\Request;
 
+
 class StokController extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class StokController extends Controller
         $datastok = stok::all();
         return view('Stok.dash-stok', compact('datastok'));
         return view('Stok.add-stok', compact('datastok'));
+        return view('Stok.edit-stok', compact('datastok'));
     }
 
     /**
@@ -32,8 +34,11 @@ class StokController extends Controller
         stok::create([
             'nama_produk' => $request->nama_produk,
             'harga_produk' => $request->harga_produk,
+            'jumlah_produk' => $request->jumlah_produk,
         ]);
         return redirect('dash-stok');
+
+        
     }
 
     /**
@@ -49,7 +54,18 @@ class StokController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        //stok::findOrFail($id)([
+    //$edit = $request->input('jumlah');
+    //'nama_produk' => $request->nama_produk,
+      //      'harga_produk' => $request->harga_produk,
+        //    'jumlah_produk' => $request->jumlah_produk,
+        //]);
+    //edit->updateStok($jumlah);
+
+    //return redirect('dash-stok')->with('success', 'Stok berhasil diperbarui.');
+    
+    //return redirect()->back()->with('success', 'Stok berhasil diperbarui.');
     }
 
     /**
@@ -57,14 +73,21 @@ class StokController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
-    }
+         
+}
+    
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $stok = stok::findOrFail($id);
+
+        // Hapus data
+        $stok->delete();
+    
+        // Redirect atau berikan respons sesuai kebutuhan Anda
+        return redirect('dash-stok');
     }
 }

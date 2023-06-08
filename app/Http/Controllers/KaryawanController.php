@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\karyawan;
+use App\Models\users;
 use Illuminate\Http\Request;
 
 class KaryawanController extends Controller
@@ -11,7 +11,7 @@ class KaryawanController extends Controller
      */
     public function index()
     {
-        $datakar = karyawan::all();
+        $datakar = users::all();
         return view('Karyawan.dash-karyawan', compact('datakar'));
         return view('Karyawan.add-karyawan', compact('datakar'));
     }
@@ -21,6 +21,7 @@ class KaryawanController extends Controller
      */
     public function create()
     {
+        //$dtkar = users::all()
         return view('Karyawan.add-karyawan');
     }
 
@@ -30,12 +31,15 @@ class KaryawanController extends Controller
     public function store(Request $request)
     {
         //dd($request->all());
-        karyawan::create([
+        users::create([
 
-            'nama_karyawan' => $request->nama_karyawan,
-            'alamat_karyawan' => $request->alamat_karyawan,
-            'NoHP_karyawan' => $request->NoHP_karyawan,
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'alamat' => $request->alamat,
+            'no_hp' => $request->no_hp,
         ]);
+       
         return redirect('dash-karyawan');
     }
 
@@ -53,7 +57,8 @@ class KaryawanController extends Controller
     public function edit($id)
     {
         {
-            $editkar = karyawan::findorfail($id);
+            
+            $editkar = users::findorfail($id);
             return view('Karyawan.dash-karyawan', compact('editkar'));
             return view('Karyawan.edit-karyawan', compact('editkar'));
         }
@@ -64,7 +69,8 @@ class KaryawanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+       // DB::table('users')->where('id',$id)->delete();
+       // return redirect('Karyawan.dash-karyawan');
     }
 
     /**
@@ -72,6 +78,15 @@ class KaryawanController extends Controller
      */
     public function destroy(string $id)
     {
+        $users = users::findOrFail($id);
+
+        // Hapus data
+        $users->delete();
+    
+        // Redirect atau berikan respons sesuai kebutuhan Anda
+        return redirect('dash-karyawan');
+        //return redirect('/users')->with('success', 'Data karyawan berhasil dihapus');
         //
+        
     }
 }

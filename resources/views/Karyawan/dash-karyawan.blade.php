@@ -153,17 +153,7 @@ Coded by www.creative-tim.com
                         <th>
                             Rubah
                         </th>
-                        @foreach ($datakar as $item)
-                        <tr>
-                          <td>{{ $item->id_karyawan }}</td>
-                          <td>{{ $item->nama_karyawan }}</td>
-                          <td>{{ $item->alamat_karyawan }}</td>
-                          <td>{{ $item->NoHP_karyawan }}</td>
-                          <td>
-                          <a class="btn btn-primary btn-round" href="{{route('edit-karyawan')}}">Update</a>
-                        <a class="btn btn-animasi btn-color" href="#"><i class="uil uil-trash-alt"></i></i></a>
-                        </tr>
-                        @endforeach
+                       
                       </thead>          
                     </table>
                   </div>
