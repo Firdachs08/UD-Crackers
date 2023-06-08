@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class stok extends Model
 {
     protected $table = "stok";
-    protected $primaryKey = "id_produk";
+    protected $primaryKey = "id";
     protected $fillable = [
-        'id_produk', 'id_karyawan', 'nama_produk', 'harga_produk'
+        'id', 'id_users', 'nama_produk', 'harga_produk', 'jumlah_produk'
     ];
     //use HasFactory;
 }
