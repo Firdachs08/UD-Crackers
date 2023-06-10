@@ -56,21 +56,23 @@ class KaryawanController extends Controller
      */ 
     public function edit($id)
     {
-        {
-            
+        
+            // dd($id);
             $editkar = users::findorfail($id);
-            return view('Karyawan.dash-karyawan', compact('editkar'));
             return view('Karyawan.edit-karyawan', compact('editkar'));
-        }
+            
+            
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$id)
     {
-       // DB::table('users')->where('id',$id)->delete();
-       // return redirect('Karyawan.dash-karyawan');
+        $data = $request->all();
+        users::findOrFail($id)->update($data);
+        return redirect('/dash-karyawan');
     }
 
     /**

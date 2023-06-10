@@ -150,12 +150,12 @@ Coded by www.creative-tim.com
                     <i class="uil uil-box"></i>
                     <span class="text">Daftar Produk / Tambah Produk</span>
                 </div>
-                <form action="{{route('save-stok')}}" method="POST">
+                <form action="{{route('update-stok', $editstok->id)}}" method="POST">
                 {{ csrf_field() }}
                     <h3>Nama Produk : <input type="text" name="nama_produk" required></h3>
                     <h3>Harga Produk : <input type="text" name="harga_produk" required></h3>
                     <h3>Jumlah Produk : <input type="text" name="jumlah_produk" required></h3>
-                    <button class="btn btn-animasi btn-color" type="submit" name="submit">Tambah Produk  <i class="uil uil-plus-circle"></i></button>
+                    <button class="btn btn-animasi btn-color" type="submit" name="submit">Update Produk  <i class="uil uil-plus-circle"></i></button>
                 </form>
             </div>
         </div>

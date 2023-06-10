@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('no_hp');
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('level', ['admin', 'karyawan']);
+            //$table->enum('level', ['admin', 'karyawan']);
             $table->rememberToken();
             $table->timestamps();
         });

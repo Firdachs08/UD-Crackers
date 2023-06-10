@@ -54,13 +54,13 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="home.html">
+            <a href="#">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="{{route('dash-stok')}}">
+            <a href="{{route('dash-pesanan')}}">
               <i class="nc-icon nc-bag-16"></i>
               <p>Pesanan</p>
             </a>
@@ -141,7 +141,6 @@ Coded by www.creative-tim.com
                         <th>
                             ID Produk
                         </th>
-                        
                         <th>
                             Nama Produk
                         </th>
@@ -172,7 +171,7 @@ Coded by www.creative-tim.com
                           <td>{{ ($item->updated_at)->format('Y-m-d H:i:s') }}</td>
                           <td>
                             
-                              <a class="btn btn-primary btn-round" href="{{route('add-stok')}}"><i class="nc-icon nc-settings-gear-65"></i></a>
+                              <a class="btn btn-primary btn-round" href="{{ route('edit-stok', $item->id) }}"><i class="nc-icon nc-settings-gear-65"></i></a>
                               <form action="{{ route('hapus-stok', $item->id) }}" method="POST">
                           {{ csrf_field() }}
                           

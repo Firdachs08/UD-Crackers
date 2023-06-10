@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\pesanan;
 use Illuminate\Http\Request;
 
 class PesananController extends Controller
@@ -11,7 +11,9 @@ class PesananController extends Controller
      */
     public function index()
     {
-        return view('dash-pesanan');
+        $datapes = pesanan::all();
+        return view('Pesanan.dash-pesanan', compact('datapes'));
+     
         //
     }
 

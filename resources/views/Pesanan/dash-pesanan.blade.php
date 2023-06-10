@@ -54,13 +54,13 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="home.html">
+            <a href="#">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            <a href="pesanan.html">
+          <li class="active ">
+            <a href="{{route('dash-pesanan')}}">
               <i class="nc-icon nc-bag-16"></i>
               <p>Pesanan</p>
             </a>
@@ -71,7 +71,7 @@ Coded by www.creative-tim.com
               <p>Stok Produk</p>
             </a>
           </li>
-          <li class="active ">
+          <li>
             <a href="{{route('dash-karyawan')}}">
               <i class="nc-icon nc-single-02"></i>
               <p>Karyawan</p>
@@ -104,7 +104,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Karyawan</a>
+            <a class="navbar-brand" href="javascript:;">Pesanan</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -132,28 +132,58 @@ Coded by www.creative-tim.com
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">Karyawan</h4>
+                  <h4 class="card-title">Pesanan</h4>
                 </div>
-                <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-constructor"></i>
-                    <span class="text">Karyawan / Edit Karyawan</span>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                            ID Pesanan
+                        </th>
+                        <th>
+                            ID Produk
+                        </th>
+                        
+                        <th>
+                            Nama
+                        </th>
+                        <th>
+                            Nomor Telepon
+                        </th>
+                        <th>
+                            Jumlah
+                        </th>
+                        <th>
+                            Total Harga
+                        </th>
+                        <th>
+                            Status
+                        </th>
+                        <th>
+                            Konfirmasi
+                        </th>
+                      </thead>
+                      @foreach ($datapes as $item)
+                        <tr>
+                        <td>{{ $item->id }}</td>
+                          <td>{{ $item->id_produk }}</td>
+                        
+                          <td>{{ $item->nama }}</td>
+                          <td>{{ $item->no_hp }}</td>
+                          <td>{{ $item->jumlah_pesanan}}</td>
+                          <td>{{ $item->total_harga }}</td>
+                          <td>{{ $item->status_bayar}}</td>
+                            <td>
+                              <a class="btn btn-primary btn-round" href="#"><i class="nc-icon nc-check-2"></i></a>
+                              <a class="btn btn-primary btn-round" href="#"><i class="nc-icon nc-simple-remove"></i></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>
+                  </div>
                 </div>
-                <form action="{{route('update-karyawan', $editkar->id)}}" method="POST">
-                 {{ csrf_field() }}
-                    <input type="hidden">
-                    <h3>Nama <input type="text" name="name" required></h3>
-                    <h3>Email<input type="text" name="email" required></h3>
-                    <h3>Password<input type="text" name="password" required></h3>
-                    <h3>Alamat <input type="text" name="alamat" required></h3>
-                    <h3>Nomor Handphone <input type="text" name="no_hp" required></h3>
-                    
-                    
-                    <button class="btn btn-animasi btn-color" type="submit" name="submit">Update Karyawan  <i class="uil uil-user-plus"></i></button>
-                </form>
-            </div>
-        </div>
+              </div>
             </div>
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">

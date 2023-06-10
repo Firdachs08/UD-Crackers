@@ -78,7 +78,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li class="active ">
-            <a href="laporan.html">
+            <a href="{{route('laporan')}}">
               <i class="nc-icon nc-book-bookmark"></i>
               <p>Laporan</p>
             </a>

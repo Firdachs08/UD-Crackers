@@ -54,7 +54,7 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="home.html">
+            <a href="#">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
@@ -139,7 +139,7 @@ Coded by www.creative-tim.com
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                            ID
+                            ID Karyawan
                         </th>
                         <th>
                             Nama 
@@ -148,13 +148,13 @@ Coded by www.creative-tim.com
                             Email
                         </th>
                         <th>
-                            Password
+                            Kata Sandi
                         </th>
                         <th>
                           Alamat
                         </th>
                         <th>
-                          Nomor Handphone
+                          No. Telepon
                         </th>       
                         <th>
                             Action
@@ -167,11 +167,11 @@ Coded by www.creative-tim.com
                           <td>{{ $item->password }}</td>
                           <td>{{ $item->alamat }}</td>
                           <td>{{ $item->no_hp }}</td>
-                          <td>{{ $item->email_verified_at}}</td>
+                         
                           
                           <td>
-                          <a class="btn btn-primary btn-round" href="{{route('edit-karyawan')}}">Update</a>
-                          <form action="{{ route('hapus-karyawan', $item->id) }}" method="POST">
+                          <a class="btn btn-primary btn-round" href="{{route('edit-karyawan', $item->id)}}">Update</a>
+                          <form action="{{ route('edit-karyawan', $item->id) }}" method="POST">
                           {{ csrf_field() }}
                           
                           <button type="submit" onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>

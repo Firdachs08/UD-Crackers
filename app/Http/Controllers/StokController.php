@@ -54,13 +54,10 @@ class StokController extends Controller
      */
     public function edit(string $id)
     {
-
-        //stok::findOrFail($id)([
-    //$edit = $request->input('jumlah');
-    //'nama_produk' => $request->nama_produk,
-      //      'harga_produk' => $request->harga_produk,
-        //    'jumlah_produk' => $request->jumlah_produk,
-        //]);
+        //dd($id);
+        $editstok = stok::findorfail($id);
+            return view('Stok.edit-stok', compact('editstok'));
+        
     //edit->updateStok($jumlah);
 
     //return redirect('dash-stok')->with('success', 'Stok berhasil diperbarui.');
@@ -73,6 +70,9 @@ class StokController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $upstok = $request->all();
+        stok::findOrFail($id)->update($upstok);
+        return redirect('/dash-stok');
          
 }
     

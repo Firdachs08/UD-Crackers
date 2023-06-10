@@ -54,7 +54,7 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="pesanan.html">
+            <a href="#">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
@@ -264,145 +264,8 @@ Coded by www.creative-tim.com
                         </th>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>
-                            000001
-                          </td>
-                          <td>
-                            Dhevita
-                          </td>
-                          <td>
-                            081221411906
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            400000000
-                          </td>
-                          <td class="text-right">
-                            Lunas
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            000001
-                          </td>
-                          <td>
-                            Dhevita
-                          </td>
-                          <td>
-                            081221411906
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            400000000
-                          </td>
-                          <td class="text-right">
-                            Lunas
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            000001
-                          </td>
-                          <td>
-                            Dhevita
-                          </td>
-                          <td>
-                            081221411906
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            400000000
-                          </td>
-                          <td class="text-right">
-                            Lunas
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            000001
-                          </td>
-                          <td>
-                            Dhevita
-                          </td>
-                          <td>
-                            081221411906
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            400000000
-                          </td>
-                          <td class="text-right">
-                            Lunas
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            000001
-                          </td>
-                          <td>
-                            Dhevita
-                          </td>
-                          <td>
-                            081221411906
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            400000000
-                          </td>
-                          <td class="text-right">
-                            Lunas
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            000001
-                          </td>
-                          <td>
-                            Dhevita
-                          </td>
-                          <td>
-                            081221411906
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            400000000
-                          </td>
-                          <td class="text-right">
-                            Lunas
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            000001
-                          </td>
-                          <td>
-                            Dhevita
-                          </td>
-                          <td>
-                            081221411906
-                          </td>
-                          <td>
-                            5
-                          </td>
-                          <td>
-                            400000000
-                          </td>
-                          <td class="text-right">
-                            Lunas
-                          </td>
+                        
+                         
                         </tr>
                       </tbody>
                     </table>
