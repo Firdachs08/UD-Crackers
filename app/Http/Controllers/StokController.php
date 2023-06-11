@@ -58,11 +58,7 @@ class StokController extends Controller
         $editstok = stok::findorfail($id);
             return view('Stok.edit-stok', compact('editstok'));
         
-    //edit->updateStok($jumlah);
-
-    //return redirect('dash-stok')->with('success', 'Stok berhasil diperbarui.');
     
-    //return redirect()->back()->with('success', 'Stok berhasil diperbarui.');
     }
 
     /**

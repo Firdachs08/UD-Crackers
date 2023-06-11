@@ -54,7 +54,7 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="#">
+            <a href="/dashboard">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
@@ -78,7 +78,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="laporan.html">
+            <a href="{{route('laporan')}}">
               <i class="nc-icon nc-book-bookmark"></i>
               <p>Laporan</p>
             </a>

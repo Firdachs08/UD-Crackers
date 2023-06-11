@@ -54,7 +54,13 @@ class PesananController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $pesanan = pesanan::find($id);
+        $pesanan->update();
+
+        $pesanan->status_bayar = 'lunas';
+        $pesanan->save();
+        return redirect('/dash-pesanan');
+        
     }
 
     /**
@@ -62,6 +68,12 @@ class PesananController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pesanan = pesanan::findOrFail($id);
+
+        // Hapus data
+        $pesanan->delete();
+    
+        // Redirect atau berikan respons sesuai kebutuhan Anda
+        return redirect('dash-pesanan');
     }
 }

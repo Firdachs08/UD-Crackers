@@ -54,7 +54,7 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="#">
+            <a href="/dashboard">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
@@ -78,7 +78,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="laporan.html">
+            <a href="{{route('laporan')}}">
               <i class="nc-icon nc-book-bookmark"></i>
               <p>Laporan</p>
             </a>
@@ -171,7 +171,7 @@ Coded by www.creative-tim.com
                           <td>{{ ($item->updated_at)->format('Y-m-d H:i:s') }}</td>
                           <td>
                             
-                              <a class="btn btn-primary btn-round" href="{{ route('edit-stok', $item->id) }}"><i class="nc-icon nc-settings-gear-65"></i></a>
+                              <a class="btn btn-primary btn-round" href="{{ route('edit-stok', $item->id) }}">Update</a>
                               <form action="{{ route('hapus-stok', $item->id) }}" method="POST">
                           {{ csrf_field() }}
                           

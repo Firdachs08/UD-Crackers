@@ -54,7 +54,7 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="active ">
-            <a href="#">
+            <a href="/dashboard">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
@@ -78,7 +78,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="laporan.html">
+            <a href="{{route('laporan')}}">
               <i class="nc-icon nc-book-bookmark"></i>
               <p>Laporan</p>
             </a>
@@ -139,8 +139,8 @@ Coded by www.creative-tim.com
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Produksi Hari ini</p>
-                      <p class="card-title"> 20 Kg<p>
+                      <p class="card-category">Total Produk</p>
+                      <p class="card-title">{{ $totalproduk }}<p>
                     </div>
                   </div>
                 </div>
@@ -163,10 +163,38 @@ Coded by www.creative-tim.com
                       <i class="nc-icon nc-cart-simple"></i>
                     </div>
                   </div>
+                 
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Produk Terjual</p>
-                      <p class="card-title">17 Kg<p>
+                      <p class="card-category">Total Pesanan</p>
+                      <p class="card-title">{{ $totalpesanan }}<p>
+                    </div>
+                  </div>
+               
+                </div>
+              </div>
+              <div class="card-footer ">
+                <hr>
+                <div class="stats">
+                  <i class="fa fa-calendar-o"></i>
+                  Last day
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="card card-stats">
+              <div class="card-body ">
+                <div class="row">
+                  <div class="col-5 col-md-4">
+                    <div class="icon-big text-center icon-warning">
+                      <i class="nc-icon nc-money-coins text-success"></i>
+                    </div>
+                  </div>
+                  <div class="col-7 col-md-8">
+                    <div class="numbers">
+                      <p class="card-category">Pembayaran Lunas</p>
+                      <p class="card-title">{{ $lunas }}<p>
                     </div>
                   </div>
                 </div>
@@ -191,34 +219,8 @@ Coded by www.creative-tim.com
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">pemasukan</p>
-                      <p class="card-title">5000000<p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer ">
-                <hr>
-                <div class="stats">
-                  <i class="fa fa-calendar-o"></i>
-                  Last day
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-stats">
-              <div class="card-body ">
-                <div class="row">
-                  <div class="col-5 col-md-4">
-                    <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-money-coins text-success"></i>
-                    </div>
-                  </div>
-                  <div class="col-7 col-md-8">
-                    <div class="numbers">
-                      <p class="card-category">Piutang</p>
-                      <p class="card-title">400000<p>
+                      <p class="card-category">Pembayaran Belum Lunas</p>
+                      <p class="card-title">{{ $belum_lunas }}<p>
                     </div>
                   </div>
                 </div>

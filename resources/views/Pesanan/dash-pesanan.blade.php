@@ -54,7 +54,7 @@ Coded by www.creative-tim.com
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="#">
+            <a href="/dashboard">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
@@ -175,8 +175,10 @@ Coded by www.creative-tim.com
                           <td>{{ $item->total_harga }}</td>
                           <td>{{ $item->status_bayar}}</td>
                             <td>
-                              <a class="btn btn-primary btn-round" href="#"><i class="nc-icon nc-check-2"></i></a>
-                              <a class="btn btn-primary btn-round" href="#"><i class="nc-icon nc-simple-remove"></i></a>
+                            {{ csrf_field() }}
+                              <a class="btn btn-primary btn-round" href="{{ route('confirm-pesanan', $item->id) }}" method="POST" ><i class="nc-icon nc-check-2"></i></a>
+                              {{ csrf_field() }}
+                              <a class="btn btn-primary btn-round" href="{{ route('hapus-pesanan', $item->id) }}" method="POST" onclick="return confirm('Anda yakin ingin menghapus data ini?')"><i class="nc-icon nc-simple-remove"></i></a>
                             </td>
                         </tr>
                         @endforeach
