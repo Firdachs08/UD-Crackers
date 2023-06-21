@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\pesanan;
 use Illuminate\Http\Request;
+use App\Models\UsersMobile;
 
 class PesananController extends Controller
 {
@@ -11,12 +12,36 @@ class PesananController extends Controller
      */
     public function index()
     {
-        $datapes = pesanan::all();
-        return view('Pesanan.dash-pesanan', compact('datapes'));
+        $datapes = pesanan::with('users')->get();
+        $users = UsersMobile::all();
+        return view('Pesanan.dash-pesanan', [
+            'datapes' => $datapes,
+            'user' => $users
+        ]);
      
         //
     }
 
+    public function cetakPesanan()
+    {
+        $datapes = pesanan::all();
+        return view('Pesanan.cetak-pesanan', compact('datapes'));
+            // Lakukan operasi yang diinginkan pada $relatedUsers
+            // dd($relatedUsers);
+           // return view('dashboard', compact('totalpesanan', 'totalproduk', 'lunas', 'belum_lunas', 'datapes', 'relatedUsers'));
+        
+       // $datapes = pesanan::with('users')->get();
+       // $users = UsersMobile::all();
+        //$datapes = pesanan::all();
+        //return view('Pesanan.cetak-pesanan', compact('totalpesanan', 'totalproduk', 'lunas', 'belum_lunas', 'datapes', 'relatedUsers'));}
+        //return view('Pesanan.cetak-pesanan', [
+          //  'datapes' => $datapes,
+            //'user' => $users
+        //]);
+       
+        //
+    }
+    
     /**
      * Show the form for creating a new resource.
      */

@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
         Schema::create('pesanan', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_produk');
             $table->foreign('id_produk')->references('id')->on('stok');
-            $table->unsignedBigInteger('id_users')->nullable();
+            $table->unsignedBigInteger('id_users');
             $table->foreign('id_users')->references('id')->on('users');
             $table->unsignedBigInteger('id_users_mobile');
             $table->foreign('id_users_mobile')->references('id')->on('users_mobile');
@@ -26,7 +25,6 @@ return new class extends Migration
             // $table->timestamp('tanggal_pesanan');
             $table->timestamps();
         });
-        Schema::enableForeignKeyConstraints();
     }
 
     /**

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\stok;
 use Illuminate\Http\Request;
+use App\Models\stok;
 
 class ApiStokController extends Controller
 {
@@ -13,6 +13,7 @@ class ApiStokController extends Controller
         return response()->json([
             'message' => 'success',
             'data' => $stok
-        ]);
-    }
+        ]
+        );
+}
 }

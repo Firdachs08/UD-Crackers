@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LaporanController;
 
 
 /*
@@ -16,6 +17,14 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+
+
+Route::get('/cetak-laporan', [LaporanController::class, 'cetakLaporan'])->name('cetak-laporan');
+//Route::get('/pdf', [LaporanController::class, 'cetakLaporan'])->name('pdf');
+//Route::get('/cetak-laporan', 'LaporanController@cetakLaporan');
+
+//Route::get('/pdf','PDFController@PDF')->name('pdf');
 
 Route::get('/', function () {
     return view('welcome');
@@ -52,6 +61,8 @@ Route::get('/edit-stok/{id}', [App\Http\Controllers\StokController::class, 'edit
 Route::post('/update-stok/{id}', [App\Http\Controllers\StokController::class, 'update'])->name('update-stok');
 //Route::put('/add-stok/{id}', [App\Http\Controllers\StokController::class, 'update'])->name('stok.update');
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+Route::get('/laporan', [App\Http\Controllers\LaporanController::class, 'index'])->name('laporan');
+
 //route karyawan
 Route::get('/dash-karyawan', [App\Http\Controllers\KaryawanController::class, 'index'])->name('dash-karyawan');
 Route::get('/add-karyawan', [App\Http\Controllers\KaryawanController::class, 'create'])->name('add-karyawan');
@@ -60,6 +71,11 @@ Route::post('/simpan-karyawan', [App\Http\Controllers\KaryawanController::class,
 Route::get('/edit-karyawan/{id}', [App\Http\Controllers\KaryawanController::class, 'edit'])->name('edit-karyawan');
 Route::post('/update-karyawan/{id}', [App\Http\Controllers\KaryawanController::class, 'update'])->name('update-karyawan');
 
+// Route Cetak pesanan
+//Route::get('/cetak-pegawai/{id}', [App\Http\Controllers\PesananController::class, 'cetakPesanan'])->name('cetak-pesanan');
+Route::get('/cetak-pesanan', [App\Http\Controllers\LaporanController::class, 'cetakLaporan'])->name('cetak-pesanan');
+//Route::get('/cetak-pesanan', [App\Http\Controllers\LaporanController::class, 'index'])->name('cetak-pesanan');
+//Route::get('/laporan', [App\Http\Controllers\LaporanController::class, 'index'])->name('laporan');
 
 
 

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UsersMobile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use App\Models\UsersMobile;
+
 
 class ApiAuthController extends Controller
 {
@@ -69,6 +69,6 @@ class ApiAuthController extends Controller
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
-        return response()->json('Logged Out');
+        return response()->json('Logged Out');
     }
 }

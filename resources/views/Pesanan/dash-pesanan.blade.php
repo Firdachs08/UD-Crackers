@@ -78,13 +78,13 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="laporan.html">
+            <a href="{{route('laporan')}}">
               <i class="nc-icon nc-book-bookmark"></i>
               <p>Laporan</p>
             </a>
           </li>
           <li>
-            <a href="login.html">
+            <a href="/masuk">
               <i class="nc-icon nc-button-power"></i>
               <p>Log Out</p>
             </a>
@@ -144,12 +144,8 @@ Coded by www.creative-tim.com
                         <th>
                             ID Produk
                         </th>
-                        
                         <th>
-                            Nama
-                        </th>
-                        <th>
-                            Nomor Telepon
+                          name
                         </th>
                         <th>
                             Jumlah
@@ -168,9 +164,7 @@ Coded by www.creative-tim.com
                         <tr>
                         <td>{{ $item->id }}</td>
                           <td>{{ $item->id_produk }}</td>
-                        
-                          <td>{{ $item->nama }}</td>
-                          <td>{{ $item->no_hp }}</td>
+                        <td>{{ $item->users->name}}</td>
                           <td>{{ $item->jumlah_pesanan}}</td>
                           <td>{{ $item->total_harga }}</td>
                           <td>{{ $item->status_bayar}}</td>

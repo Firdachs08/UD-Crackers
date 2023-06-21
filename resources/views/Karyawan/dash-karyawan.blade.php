@@ -84,7 +84,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="login.html">
+            <a href="/masuk">
               <i class="nc-icon nc-button-power"></i>
               <p>Log Out</p>
             </a>

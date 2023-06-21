@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Sanctum\HasApiTokens;
 
 class UsersMobile extends Model
 {
@@ -13,12 +12,7 @@ class UsersMobile extends Model
     protected $guarded = [
         'id'	
     ];
-    protected $fillalable = [
-        '*'
-    ];
-
-    use HasFactory;
-    use HasApiTokens;
+    //use HasFactory;
 public function pesanan()
     {
     return $this->hasMany(pesanan::class);

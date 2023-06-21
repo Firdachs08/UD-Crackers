@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pesanan;
 use Illuminate\Http\Request;
+use App\Models\pesanan;
 
 class ApiPesananController extends Controller
 {
@@ -34,8 +34,8 @@ class ApiPesananController extends Controller
     public function show(Request $request){
         $user = $request->user();
         $id_user = $user->id;
-        
-        $riwayat = pesanan::with(['stok', 'UsersMobile'])->whereHas('UsersMobile', function ($query) use ($id_user) {
+
+        $riwayat = pesanan::with(['stok', 'users'])->whereHas('users', function ($query) use ($id_user) {
             $query->where('id_users_mobile', $id_user);
         })
         ->orderByDesc('id')
@@ -44,6 +44,6 @@ class ApiPesananController extends Controller
         return response()->json([
             'message' => 'success',
             'data' => $riwayat,
-        ], 200);
+        ], 200);
     }
 }
