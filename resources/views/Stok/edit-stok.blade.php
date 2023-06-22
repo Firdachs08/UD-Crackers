@@ -52,15 +52,15 @@ Coded by www.creative-tim.com
         </a>
       </div>
       <div class="sidebar-wrapper">
-        <ul class="nav">
+      <ul class="nav">
           <li>
-            <a href="home.html">
+            <a href="/dashboard">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="pesanan.html">
+            <a href="{{route('dash-pesanan')}}">
               <i class="nc-icon nc-bag-16"></i>
               <p>Pesanan</p>
             </a>
@@ -78,13 +78,13 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="laporan.html">
+            <a href="{{route('laporan')}}">
               <i class="nc-icon nc-book-bookmark"></i>
               <p>Laporan</p>
             </a>
           </li>
           <li>
-            <a href="login.html">
+            <a href="/masuk">
               <i class="nc-icon nc-button-power"></i>
               <p>Log Out</p>
             </a>

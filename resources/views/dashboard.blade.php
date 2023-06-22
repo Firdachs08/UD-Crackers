@@ -84,7 +84,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="login.html">
+            <a href="/masuk">
               <i class="nc-icon nc-button-power"></i>
               <p>Log Out</p>
             </a>
@@ -261,14 +261,22 @@ Coded by www.creative-tim.com
                         <th>
                           Total Harga
                         </th>
-                        <th class="text-right">
+                        <th >
                           Status
                         </th>
                       </thead>
                       <tbody>
-                        
-                         
+                      @foreach ($datapes as $item)
+                        <tr>
+                        <td>{{ $item->id }}</td>
+                                          
+                          <td>{{ $relatedUsers->name }}</td>
+                          <td>{{ $relatedUsers->no_hp }}</td>
+                          <td>{{ $item->jumlah_pesanan}}</td>
+                          <td>{{ $item->total_harga }}</td>
+                          <td>{{ $item->status_bayar}}</td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                   </div>
