@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UsersMobile;
-
+use Illuminate\Support\Facades\Hash;
 
 class ApiAuthController extends Controller
 {

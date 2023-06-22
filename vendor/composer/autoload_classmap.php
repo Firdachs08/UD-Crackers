@@ -8,6 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\ApiAuthController' => $baseDir . '/app/Http/Controllers/ApiAuthController.php',
+    'App\\Http\\Controllers\\ApiPesananController' => $baseDir . '/app/Http/Controllers/ApiPesananController.php',
+    'App\\Http\\Controllers\\ApiStokController' => $baseDir . '/app/Http/Controllers/ApiStokController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
     'App\\Http\\Controllers\\KaryawanController' => $baseDir . '/app/Http/Controllers/KaryawanController.php',
@@ -5685,6 +5688,7 @@ return array(
     'Symfony\\Component\\String\\Inflector\\FrenchInflector' => $vendorDir . '/symfony/string/Inflector/FrenchInflector.php',
     'Symfony\\Component\\String\\Inflector\\InflectorInterface' => $vendorDir . '/symfony/string/Inflector/InflectorInterface.php',
     'Symfony\\Component\\String\\LazyString' => $vendorDir . '/symfony/string/LazyString.php',
+    'Symfony\\Component\\String\\Resources\\WcswidthDataGenerator' => $vendorDir . '/symfony/string/Resources/WcswidthDataGenerator.php',
     'Symfony\\Component\\String\\Slugger\\AsciiSlugger' => $vendorDir . '/symfony/string/Slugger/AsciiSlugger.php',
     'Symfony\\Component\\String\\Slugger\\SluggerInterface' => $vendorDir . '/symfony/string/Slugger/SluggerInterface.php',
     'Symfony\\Component\\String\\UnicodeString' => $vendorDir . '/symfony/string/UnicodeString.php',
